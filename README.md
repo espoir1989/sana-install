@@ -101,7 +101,7 @@ dashboard-authorization: "test1234" //面板授权密码
 ```
 启动镜像
 ```
-docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /home/ant:/home/ant  --name sana expoir1989/sana ant start --verbosity 5 --full-node --config /root/.ant.yaml --debug-api-enable
+docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /home/ant:/home/ant  --name sana expoir1989/sana ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 ```
 查看日志
 ```
