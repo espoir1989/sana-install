@@ -86,7 +86,28 @@ sudoant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enab
 
 ## Docker部署
 本脚本使用的镜像，未构建健康监测，请自行增加。
-完善中......
+```
+docker pull expoir1989/sana
+```
+下载配置文件
+```
+https://github.com/espoir1989/sana-install/raw/main/ant.yaml
+```
+修改配置文件
+```
+password: "钱包密码" //钱包密码
+swap-endpoint: https://rpc.xdaichain.com/ //rpc地址
+dashboard-authorization: "test1234" //面板授权密码
+```
+启动镜像
+```
+docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /home/ant:/home/ant  --name sana expoir1989/sana ant start --verbosity 5 --full-node --config /root/.ant.yaml --debug-api-enable
+```
+查看日志
+```
+docker logs -f sana
+```
+根据提示转入xdai以及sana
 
 ## K8s部署
 完善中......
@@ -97,7 +118,9 @@ ExportKey 路径 钱包密码
 ```
 
 ## 捐赠
+
 ETH地址：0x1edBdb7828fb040bE54f8e1988b8E7a7f486B2e3
+
 XDAI地址：0x1edBdb7828fb040bE54f8e1988b8E7a7f486B2e3
 
 感谢捐赠，未来会提供更多的一键挖矿教程。
