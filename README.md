@@ -41,6 +41,7 @@ https://stake.getblock.io/mainnet/?api_key=key
 
 ## SGX 安装配置
 SGX仅支持intel平台，因为sana使用的inte_sgx，目前支持情况不佳，这里只提供部署方法，不提供硬件方案。
+
 打开sgx功能
 ```
 wget https://github.com/ethsana/sgx-tools/releases/download/0.1/sgx_enable
