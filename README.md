@@ -113,6 +113,16 @@ docker logs -f sana
 ## K8s部署
 完善中......
 
+## Dashboard
+安装脚本已经安装了nginx，本地直接访问
+```
+http://localhost
+```
+服务器或者vps部署
+```
+http://IP地址
+```
+
 ## 私钥导出
 ```
 ExportKey 路径 钱包密码
@@ -125,3 +135,4 @@ ETH地址：0x1edBdb7828fb040bE54f8e1988b8E7a7f486B2e3
 XDAI地址：0x1edBdb7828fb040bE54f8e1988b8E7a7f486B2e3
 
 感谢捐赠，未来会提供更多的一键挖矿教程。
+**
