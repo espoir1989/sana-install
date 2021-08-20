@@ -79,7 +79,7 @@ dashboard-authorization: "test1234" //面板授权密码
 修改完成后，可以使用screen在后台运行
 sana启动命令
 ```
-sudoant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
+sudo ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 ```
 输出一下信息后，需要将xdai网络中的xdai以及sana转入
 ![](images/xdai-001.jpg)
