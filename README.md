@@ -91,6 +91,11 @@ sudoant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enab
 ## K8s部署
 完善中......
 
+## 私钥导出
+```
+ExportKey 路径 钱包密码
+```
+
 ## 捐赠
 ETH地址：0x1edBdb7828fb040bE54f8e1988b8E7a7f486B2e3
 XDAI地址：0x1edBdb7828fb040bE54f8e1988b8E7a7f486B2e3
