@@ -1,4 +1,5 @@
 # SANA挖矿教程
+## ！非官方教程 ！
 ## 基础信息
 ### 代币合约地址
 #### ETH网络 ：[0x87cdc02f0812f08cd50f946793706fad9c265e2d](https://etherscan.io/token/0x87cdc02f0812f08cd50f946793706fad9c265e2d)
@@ -101,7 +102,7 @@ dashboard-authorization: "test1234" //面板授权密码
 ```
 启动镜像
 ```
-docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /home/ant:/home/ant  --name sana expoir1989/sana ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
+docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /home/ant:/home/ant  --name sana expoir1989/sana ant start --verbosity 5 --full-node --config /root/.ant.yaml --debug-api-enable
 ```
 查看日志
 ```
