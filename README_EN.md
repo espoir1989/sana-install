@@ -89,7 +89,7 @@ After the roll-in, the node starts to run
 ## Docker deployment
 The image used in this script is not built for health monitoring. Please add it by yourself.
 ```
-docker pull expoir1989/sana
+docker pull expoir1989/sana:v0.1.1
 ```
 Downloading a Configuration File
 ```

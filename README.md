@@ -89,7 +89,7 @@ sudo ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-ena
 ## Docker部署
 本脚本使用的镜像，未构建健康监测，请自行增加。
 ```
-docker pull expoir1989/sana
+docker pull expoir1989/sana:v0.1.1
 ```
 下载配置文件
 ```
