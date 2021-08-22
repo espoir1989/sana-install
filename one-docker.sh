@@ -8,6 +8,7 @@ fi
 read -p "请输入钱包密码:" password
 read -p "请输入面板授权码:" dashboard
 echo "####安装基础组件####"
+cd /root
 apt update 
 apt install zip unzip curl wget nginx screen vim -y
 echo "####镜像拉取中####"
