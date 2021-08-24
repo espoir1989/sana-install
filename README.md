@@ -116,7 +116,7 @@ docker logs -f sana
 docker 安装教程
 [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
 
-一键部署请执行一下命令
+一键部署请执行以下命令
 
 ```
 wget https://raw.githubusercontent.com/espoir1989/sana-install/main/one-docker.sh
