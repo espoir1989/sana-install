@@ -1,5 +1,5 @@
 # SANA挖矿教程
-## ！非官方教程 ！
+## ！非官方教程，一键脚本仅适合未部署过的用户！
 ## 基础信息
 ### 代币合约地址
 #### ETH网络 ：[0x87cdc02f0812f08cd50f946793706fad9c265e2d](https://etherscan.io/token/0x87cdc02f0812f08cd50f946793706fad9c265e2d)
@@ -111,6 +111,15 @@ docker logs -f sana
 ```
 根据提示转入xdai以及sana
 
+## Docker一键部署部署
+#### 请自行安装docker
+```
+wget https://raw.githubusercontent.com/espoir1989/sana-install/main/one-docker.sh
+
+/bin/bash one-docker.sh
+```
+根据提示输入钱包密码与面板授权密码，该脚本会安装私钥导出程序以及面板。
+
 ## K8s部署
 完善中......
 
@@ -127,6 +136,14 @@ http://IP地址
 ## 私钥导出
 ```
 ExportKey 路径 钱包密码
+```
+
+## 备份
+#### 请完整备份一下三个目录，缺一不可！
+```
+keys
+localstore
+statestore
 ```
 
 ## 捐赠
