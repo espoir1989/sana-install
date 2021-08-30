@@ -2,8 +2,6 @@
 
 # SANA挖矿教程
 ## ！非官方教程，一键脚本仅适合未部署过的用户！
-## 目录
-[toc]
 ## 基础信息
 ### 代币合约地址
 #### ETH网络 ：[0x87cdc02f0812f08cd50f946793706fad9c265e2d](https://etherscan.io/token/0x87cdc02f0812f08cd50f946793706fad9c265e2d)
