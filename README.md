@@ -91,7 +91,7 @@ sudo ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-ena
 ## Docker部署
 本脚本使用的镜像，未构建健康监测，请自行增加。
 ```
-docker pull expoir1989/sana:v0.1.1
+docker pull expoir1989/sana:v0.1.2
 ```
 下载配置文件
 ```
@@ -105,7 +105,7 @@ dashboard-authorization: "test1234" //面板授权密码
 ```
 启动镜像
 ```
-docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /home/ant:/home/ant  --name sana expoir1989/sana:v0.1.1 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
+docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /home/ant:/home/ant  --name sana expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 ```
 查看日志
 ```
