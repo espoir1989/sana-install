@@ -128,16 +128,35 @@ wget https://raw.githubusercontent.com/espoir1989/sana-install/main/one-docker.s
 根据提示输入钱包密码与面板授权密码，该脚本会安装私钥导出程序以及面板。
 
 ## Docker 批量部署
-#### 请在root权限下运行，sudo su
+#### 请在root权限下运行
+```
+sudo su
+```
+#### 下载并修改配置文件
 ```
 cd /root
 wget https://github.com/espoir1989/sana-install/raw/main/ant.yaml
+```
+```
+password: "钱包密码"
+dashboard-authorization: "api鉴权密码"
+```
+#### 开启容器
+```
 mkdir -p /data/001 /data/002 /data/003 /data/004 /data/005
 docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/001:/home/ant  --name sana-001 expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 docker run -d --restart=always -p 1643:1633 -p 1644:1634 -p 1645:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/002:/home/ant  --name sana-002 expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 docker run -d --restart=always -p 1653:1633 -p 1654:1634 -p 1655:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/003:/home/ant  --name sana-003 expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 docker run -d --restart=always -p 1663:1633 -p 1664:1634 -p 1665:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/004:/home/ant  --name sana-004 expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 docker run -d --restart=always -p 1673:1633 -p 1674:1634 -p 1675:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/005:/home/ant  --name sana-005 expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
+```
+#### 查看log并质押代币
+```
+docker logs -f sana-001
+docker logs -f sana-002
+docker logs -f sana-003
+docker logs -f sana-004
+docker logs -f sana-005
 ```
 
 ## K8s部署
