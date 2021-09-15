@@ -150,13 +150,11 @@ docker run -d --restart=always -p 1653:1633 -p 1654:1634 -p 1655:1635 -v /root/a
 docker run -d --restart=always -p 1663:1633 -p 1664:1634 -p 1665:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/004:/home/ant  --name sana-004 expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 docker run -d --restart=always -p 1673:1633 -p 1674:1634 -p 1675:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/005:/home/ant  --name sana-005 expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 ```
-#### 查看log并质押代币
+查看log并质押代币
 ```
 docker logs -f sana-001
 docker logs -f sana-002
-docker logs -f sana-003
-docker logs -f sana-004
-docker logs -f sana-005
+docker logs -f sana-00
 ```
 
 ## K8s部署
@@ -171,6 +169,10 @@ http://localhost
 ```
 http://IP地址
 ```
+
+## 群控面板
+根据部分用户需求开发了一个本地化的群控面板
+![](images/dashboard.jpg)
 
 ## 私钥导出
 ```
@@ -189,6 +191,10 @@ statestore
 ```
 
 ```
+
+## 付费服务
+#### 节点搭建，tee搭建，群控面板，请联系[telegram](https://t.me/chouyan666)
+
 ## 捐赠
 
 ETH地址：0x1edBdb7828fb040bE54f8e1988b8E7a7f486B2e3
