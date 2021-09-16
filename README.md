@@ -60,7 +60,6 @@ ubuntu@nsXXX:~# dmesg | grep SME
 ```
 ubuntu@nsXXX:~# dmesg | grep "SEV supported"
 [    7.637219] SVM: SEV supported
-
 ```
 ```
 ubuntu@nsXXX:~# cat /sys/module/kvm_amd/parameters/sev
@@ -176,11 +175,21 @@ docker run -d --restart=always -p 1653:1633 -p 1654:1634 -p 1655:1635 -v /root/a
 docker run -d --restart=always -p 1663:1633 -p 1664:1634 -p 1665:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/004:/home/ant  --name sana-004 expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 docker run -d --restart=always -p 1673:1633 -p 1674:1634 -p 1675:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/005:/home/ant  --name sana-005 expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 ```
-查看log并质押代币
+依次查看log并质押代币
 ```
 docker logs -f sana-001
+```
+```
 docker logs -f sana-002
-docker logs -f sana-00
+```
+```
+docker logs -f sana-003
+```
+```
+docker logs -f sana-004
+```
+```
+docker logs -f sana-005
 ```
 
 ## K8s部署
@@ -194,6 +203,17 @@ http://localhost
 服务器或者vps部署
 ```
 http://IP地址
+```
+
+#### 独立安装dashboard
+仅限未安装nginx，并且未使用一键安装的场景
+```
+apt install zip unzip curl wget nginx screen vim -y
+wget https://github.com/ethsana/ant-dashboard/archive/refs/heads/online.zip
+unzip online.zip
+rm -rf /var/www/html/*
+cp -r ant-dashboard-online/* /var/www/html/
+service nginx restart
 ```
 
 ## 群控面板
