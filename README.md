@@ -41,6 +41,31 @@ https://getblock.io/
 https://stake.getblock.io/mainnet/?api_key=key
 ```
 ## SEV 安装配置
+#### 需要 AMD Naples/Rome Epyc 系列的CPU，并在主板中打开sev与sem的开关
+```
+vim /etc/default/grub
+```
+在GRUB_CMDLINE_LINUX_DEFAULT中增加
+```
+mem_encrypt=on kvm_amd.sev=1
+```
+修改完成后重启服务器
+
+#### 验证，输出一下数据为开启成功
+```
+ubuntu@nsXXX:~# dmesg | grep SME
+[    1.247928] AMD Secure Memory Encryption (SME) active
+```
+
+```
+ubuntu@nsXXX:~# dmesg | grep "SEV supported"
+[    7.637219] SVM: SEV supported
+
+```
+```
+ubuntu@nsXXX:~# cat /sys/module/kvm_amd/parameters/sev
+1
+```
 
 ## SGX 安装配置
 SGX仅支持intel平台，因为sana使用的inte_sgx，目前支持情况不佳，这里只提供部署方法，不提供硬件方案。
@@ -188,10 +213,31 @@ localstore
 statestore
 ```
 
+## 节点数据恢复
+#### 如果遇到重复质押，或者节点无法提取收益的情况，可以用修复工具进行修复
+```
+wget https://github.com/ethsana/repair-chequebook/releases/download/v0.1.0/repair-chequebook-linux-amd64
+mv repair-chequebook-linux-amd64 /usr/bin/repair-chequebook
+```
+新建一个文件夹，并且开始创建新数据
+```
+mkdir new
+repair-chequebook new/ 创建账本的hash rpc地址
+```
+修复完成后核对账本地址，并将节点钱包的keys文件夹复制进来，使用该数据启动节点
+
 ## RPC-docker部署
 ```
-
+docker run --restart=always -d --name xdai-node \
+ -v /home/openethereum:/home/openethereum/.local/share/io.parity.ethereum/ \
+ -p 8545:8545   -p 8546:8546   -p 30302:30303  \
+ -p 30302:30303/udp openethereum/openethereum:latest \
+ --jsonrpc-interface all --ws-interface all \
+ --max-peers 1000  --jsonrpc-threads=100 --jsonrpc-cors=all --jsonrpc-server-threads=16 --chain xdai
 ```
+/home/openethereum 为数据存储目录，请根据本地磁盘情况修改。
+国内同步区块需要3-7天，国外需要1-5天，带机量如果较大，请使用配置较高的机器。
+最近比较忙，空下来会提供一份离线数据包，大约50G，可以加速区块同步。
 
 ## 付费服务
 #### 节点搭建，tee搭建，群控面板，请联系[telegram](https://t.me/chouyan666)
