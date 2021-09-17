@@ -259,6 +259,10 @@ docker run --restart=always -d --name xdai-node \
 国内同步区块需要3-7天，国外需要1-5天，带机量如果较大，请使用配置较高的机器。
 最近比较忙，空下来会提供一份离线数据包，大约50G，可以加速区块同步。
 
+## XDAI 手机钱包
+
+[TP钱包教程](https://www.chainnews.com/articles/691156556396.htm)
+
 ## 付费服务
 #### 节点搭建，tee搭建，群控面板，请联系[telegram](https://t.me/chouyan666)
 
