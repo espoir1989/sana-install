@@ -1,7 +1,7 @@
 
 
 # SANA挖矿教程
-## ！非官方教程，一键脚本仅适合未部署过的用户！
+## ！非官方教程，一键脚本仅适合未部署过的用户！github下载地址已经改为国内加速地址
 ## 基础信息
 ### 代币合约地址
 #### ETH网络 ：[0x87cdc02f0812f08cd50f946793706fad9c265e2d](https://etherscan.io/token/0x87cdc02f0812f08cd50f946793706fad9c265e2d)
@@ -71,7 +71,7 @@ SGX仅支持intel平台，因为sana使用的inte_sgx，目前支持情况不佳
 
 打开sgx功能
 ```
-wget https://github.com/ethsana/sgx-tools/releases/download/0.1/sgx_enable
+wget https://github.91chifun.workers.dev/https://github.com/ethsana/sgx-tools/releases/download/0.1/sgx_enable
 sudo chmod +x sgx_enable
 sudo ./sgx_enable
 ```
@@ -209,7 +209,7 @@ http://IP地址
 仅限未安装nginx，并且未使用一键安装的场景
 ```
 apt install zip unzip curl wget nginx screen vim -y
-wget https://github.com/ethsana/ant-dashboard/archive/refs/heads/online.zip
+wget https://github.91chifun.workers.dev/https://github.com/ethsana/ant-dashboard/archive/refs/heads/online.zip
 unzip online.zip
 rm -rf /var/www/html/*
 cp -r ant-dashboard-online/* /var/www/html/
@@ -223,7 +223,7 @@ service nginx restart
 ## 私钥导出
 #### 二进制导出
 ```
-wget https://github.com/ethsana/exportSanaKey/releases/download/v0.1.0/export-sana-key-linux-amd64
+wget https://github.91chifun.workers.dev/https://github.com/ethsana/exportSanaKey/releases/download/v0.1.0/export-sana-key-linux-amd64
 mv export-sana-key-linux-amd64 /usr/bin/ExportKey
 chmod -R 777 /usr/bin/ExportKey
 ExportKey keys文件夹路径 钱包密码
@@ -269,7 +269,7 @@ statestore
 ## 节点数据恢复
 #### 如果遇到重复质押，或者节点无法提取收益的情况，可以用修复工具进行修复
 ```
-wget https://github.com/ethsana/repair-chequebook/releases/download/v0.1.0/repair-chequebook-linux-amd64
+wget https://github.91chifun.workers.dev/https://github.com/ethsana/repair-chequebook/releases/download/v0.1.0/repair-chequebook-linux-amd64
 mv repair-chequebook-linux-amd64 /usr/bin/repair-chequebook
 ```
 新建一个文件夹，并且开始创建新数据
