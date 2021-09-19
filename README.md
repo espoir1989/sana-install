@@ -221,8 +221,41 @@ service nginx restart
 ![](images/dashboard.jpg)
 
 ## 私钥导出
+#### 二进制导出
 ```
-ExportKey 路径 钱包密码
+wget https://github.com/ethsana/exportSanaKey/releases/download/v0.1.0/export-sana-key-linux-amd64
+mv export-sana-key-linux-amd64 /usr/bin/ExportKey
+chmod -R 777 /usr/bin/ExportKey
+ExportKey keys文件夹路径 钱包密码
+```
+#### 源码执行，自行安装golang环境
+```
+git clone https://github.com/ethsana/exportSanaKey
+cd exportSanaKey/pkg
+go run main.go keys文件夹路径 钱包密码
+```
+
+## API
+#### 节点状态
+```
+待完善
+```
+#### 挖矿状态查询
+授权状态
+```
+curl -s localhost:3635/mine/status -H 'Authorization: 授权码'
+```
+非授权状态
+```
+curl -s localhost:3635/mine/status
+```
+#### 提取收益
+```
+待完善
+```
+#### 提取质押币
+```
+待完善
 ```
 
 ## 备份
@@ -247,10 +280,13 @@ repair-chequebook new/ 创建账本的hash rpc地址
 修复完成后核对账本地址，并将节点钱包的keys文件夹复制进来，使用该数据启动节点
 
 ## RPC-docker部署
+#### 预留60G以上的可用空间
 ```
+mkdir /home/openethereum
+chmod -R 777 /home/openethereum
 docker run --restart=always -d --name xdai-node \
  -v /home/openethereum:/home/openethereum/.local/share/io.parity.ethereum/ \
- -p 8545:8545   -p 8546:8546   -p 30302:30303  \
+ -p 8545:8545 -p 8546:8546   -p 30302:30303  \
  -p 30302:30303/udp openethereum/openethereum:latest \
  --jsonrpc-interface all --ws-interface all \
  --max-peers 1000  --jsonrpc-threads=100 --jsonrpc-cors=all --jsonrpc-server-threads=16 --chain xdai
@@ -264,7 +300,8 @@ docker run --restart=always -d --name xdai-node \
 [TP钱包教程](https://www.chainnews.com/articles/691156556396.htm)
 
 ## 付费服务
-#### 节点搭建，tee搭建，群控面板，请联系[telegram](https://t.me/chouyan666)
+#### 节点搭建，tee搭建，群控面板，tee服务器租用，技术咨询
+#### 请联系[telegram](https://t.me/chouyan666)
 
 ## 捐赠
 
@@ -273,4 +310,3 @@ ETH地址：0x1edBdb7828fb040bE54f8e1988b8E7a7f486B2e3
 XDAI地址：0x1edBdb7828fb040bE54f8e1988b8E7a7f486B2e3
 
 感谢捐赠，未来会提供更多的一键挖矿教程。
-**
