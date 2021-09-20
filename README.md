@@ -237,23 +237,42 @@ go run main.go keys文件夹路径 钱包密码
 
 ## API
 #### 节点状态
+授权状态
 ```
-待完善
+curl -s localhost:1615/status -H 'Authorization: 授权码'
+```
+非授权状态
+```
+curl -s localhost:1615/status
 ```
 #### 挖矿状态查询
 授权状态
 ```
-curl -s localhost:3635/mine/status -H 'Authorization: 授权码'
+curl -s localhost:1635/mine/status -H 'Authorization: 授权码'
 ```
 非授权状态
 ```
-curl -s localhost:3635/mine/status
+curl -s localhost:1635/mine/status
 ```
 #### 提取收益
+授权状态
 ```
-待完善
+curl -s -X POST http://localhost:1635/mine/withdraw -H 'Authorization: 授权码'
 ```
-#### 提取质押币
+非授权状态
+```
+curl -s -X POST http://localhost:1635/mine/withdraw
+```
+#### 提取质押币，提取后解锁需要7天，这7天无收益
+授权状态
+```
+curl -s -X POST http://localhost:1635/mine/cashdeposit -H 'Authorization: 授权码'
+```
+非授权状态
+```
+curl -s -X POST http://localhost:1635/mine/cashdeposit
+```
+7天后执行提取
 ```
 待完善
 ```
