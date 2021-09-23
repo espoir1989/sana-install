@@ -20,7 +20,7 @@ sed -i 's/钱包密码/'$password'/' /root/ant.yaml
 sed -i 's/test1234/'$dashboard'/' /root/ant.yaml
 echo "####启动容器####"
 mkdir /home/ant
-docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /home/ant:/home/ant  --name sana expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
+docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /home/ant:/home/ant  --name sana expoir1989/sana:v0.1.3 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 echo "####安装面板####"
 wget https://github.91chifun.workers.dev/https://github.com/ethsana/exportSanaKey/releases/download/v0.1.0/export-sana-key-linux-amd64
 mv export-sana-key-linux-amd64 /usr/bin/ExportKey

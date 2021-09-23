@@ -116,7 +116,7 @@ sudo ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-ena
 ## Docker部署
 本脚本使用的镜像，未构建健康监测，请自行增加。
 ```
-docker pull expoir1989/sana:v0.1.2
+docker pull expoir1989/sana:v0.1.3
 ```
 下载配置文件
 ```
@@ -130,7 +130,7 @@ dashboard-authorization: "test1234" //面板授权密码
 ```
 启动镜像
 ```
-docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /home/ant:/home/ant  --name sana expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
+docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /home/ant:/home/ant  --name sana expoir1989/sana:v0.1.3 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 ```
 查看日志
 ```
@@ -169,11 +169,11 @@ dashboard-authorization: "api鉴权密码"
 #### 开启容器
 ```
 mkdir -p /data/001 /data/002 /data/003 /data/004 /data/005
-docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/001:/home/ant  --name sana-001 expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
-docker run -d --restart=always -p 1643:1633 -p 1644:1634 -p 1645:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/002:/home/ant  --name sana-002 expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
-docker run -d --restart=always -p 1653:1633 -p 1654:1634 -p 1655:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/003:/home/ant  --name sana-003 expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
-docker run -d --restart=always -p 1663:1633 -p 1664:1634 -p 1665:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/004:/home/ant  --name sana-004 expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
-docker run -d --restart=always -p 1673:1633 -p 1674:1634 -p 1675:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/005:/home/ant  --name sana-005 expoir1989/sana:v0.1.2 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
+docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/001:/home/ant  --name sana-001 expoir1989/sana:v0.1.3 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
+docker run -d --restart=always -p 1643:1633 -p 1644:1634 -p 1645:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/002:/home/ant  --name sana-002 expoir1989/sana:v0.1.3 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
+docker run -d --restart=always -p 1653:1633 -p 1654:1634 -p 1655:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/003:/home/ant  --name sana-003 expoir1989/sana:v0.1.3 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
+docker run -d --restart=always -p 1663:1633 -p 1664:1634 -p 1665:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/004:/home/ant  --name sana-004 expoir1989/sana:v0.1.3 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
+docker run -d --restart=always -p 1673:1633 -p 1674:1634 -p 1675:1635 -v /root/ant.yaml:/root/ant.yaml -v /data/005:/home/ant  --name sana-005 expoir1989/sana:v0.1.3 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 ```
 依次查看log并质押代币
 ```
@@ -194,6 +194,11 @@ docker logs -f sana-005
 
 ## K8s部署
 完善中......
+
+## 官方Docker镜像
+```
+docker pull ethsana/ant:v0.1.3
+```
 
 ## Dashboard
 安装脚本已经安装了nginx，本地直接访问

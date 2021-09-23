@@ -89,7 +89,7 @@ After the roll-in, the node starts to run
 ## Docker deployment
 The image used in this script is not built for health monitoring. Please add it by yourself.
 ```
-docker pull expoir1989/sana:v0.1.1
+docker pull expoir1989/sana:v0.1.3
 ```
 Downloading a Configuration File
 ```
@@ -103,7 +103,7 @@ dashboard-authorization: "test1234" //Panel Authorization password
 ```
 Boot image
 ```
-docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /home/ant:/home/ant  --name sana expoir1989/sana:v0.1.1 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
+docker run -d --restart=always -p 1633:1633 -p 1634:1634 -p 1635:1635 -v /root/ant.yaml:/root/ant.yaml -v /home/ant:/home/ant  --name sana expoir1989/sana:v0.1.3 ant start --verbosity 5 --full-node --config /root/ant.yaml --debug-api-enable
 ```
 See the log
 ```
