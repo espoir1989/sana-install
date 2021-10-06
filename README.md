@@ -295,6 +295,7 @@ statestore
 ```
 wget https://github.91chifun.workers.dev/https://github.com/ethsana/repair-chequebook/releases/download/v0.1.0/repair-chequebook-linux-amd64
 mv repair-chequebook-linux-amd64 /usr/bin/repair-chequebook
+chmod +X /usr/bin/repair-chequebook
 ```
 新建一个文件夹，并且开始创建新数据
 ```
@@ -302,6 +303,25 @@ mkdir new
 repair-chequebook new/ 创建账本的hash rpc地址
 ```
 修复完成后核对账本地址，并将节点钱包的keys文件夹复制进来，使用该数据启动节点
+
+## 节点db修复
+#### 遇到节点unwork，查询区块链浏览器后，发现异常pending的请求，请使用该工具修复
+本版本为临时版本，旨在官方发布正式版本前，为db异常的用户，提供数据修复
+正式运行请使用官方版本，介意的用户，请自行编译或者等待官方releases，本为不为该版本承担任何责任
+md5sum
+4fb22b84b5956d8c9a38e44e92eace56
+
+#### 使用教程，请在执行前备份数据
+```
+wget https://github.com/espoir1989/sana-install/releases/download/0.1.3-db-espoir1989/ant
+./ant db resetnonce --data-dir 数据目录
+```
+
+#### 国内下载
+```
+wget https://github.com/espoir1989/sana-install/releases/download/0.1.3-db-espoir1989/ant
+./ant db resetnonce --data-dir 数据目录
+```
 
 ## RPC-docker部署
 #### 预留60G以上的可用空间
