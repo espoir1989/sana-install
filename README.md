@@ -319,7 +319,7 @@ wget https://github.com/espoir1989/sana-install/releases/download/0.1.3-db-espoi
 
 #### 国内下载
 ```
-wget https://github.com/espoir1989/sana-install/releases/download/0.1.3-db-espoir1989/ant
+wget https://github.91chifun.workers.dev/https://github.com/espoir1989/sana-install/releases/download/0.1.3-db-espoir1989/ant
 ./ant db resetnonce --data-dir 数据目录
 ```
 
