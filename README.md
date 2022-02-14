@@ -71,7 +71,7 @@ SGX仅支持intel平台，因为sana使用的inte_sgx，目前支持情况不佳
 
 打开sgx功能
 ```
-wget https://github.91chifun.workers.dev/https://github.com/ethsana/sgx-tools/releases/download/0.1/sgx_enable
+wget https://github.com/ethsana/sgx-tools/releases/download/0.1/sgx_enable
 sudo chmod +x sgx_enable
 sudo ./sgx_enable
 ```
@@ -214,7 +214,7 @@ http://IP地址
 仅限未安装nginx，并且未使用一键安装的场景
 ```
 apt install zip unzip curl wget nginx screen vim -y
-wget https://github.91chifun.workers.dev/https://github.com/ethsana/ant-dashboard/archive/refs/heads/online.zip
+wget https://github.com/ethsana/ant-dashboard/archive/refs/heads/online.zip
 unzip online.zip
 rm -rf /var/www/html/*
 cp -r ant-dashboard-online/* /var/www/html/
@@ -228,7 +228,7 @@ service nginx restart
 ## 私钥导出
 #### 二进制导出
 ```
-wget https://github.91chifun.workers.dev/https://github.com/ethsana/exportSanaKey/releases/download/v0.1.0/export-sana-key-linux-amd64
+wget https://github.com/ethsana/exportSanaKey/releases/download/v0.1.0/export-sana-key-linux-amd64
 mv export-sana-key-linux-amd64 /usr/bin/ExportKey
 chmod -R 777 /usr/bin/ExportKey
 ExportKey keys文件夹路径 钱包密码
@@ -293,7 +293,7 @@ statestore
 ## 节点数据恢复
 #### 如果遇到重复质押，或者节点无法提取收益的情况，可以用修复工具进行修复
 ```
-wget https://github.91chifun.workers.dev/https://github.com/ethsana/repair-chequebook/releases/download/v0.1.0/repair-chequebook-linux-amd64
+wget https://github.com/ethsana/repair-chequebook/releases/download/v0.1.0/repair-chequebook-linux-amd64
 mv repair-chequebook-linux-amd64 /usr/bin/repair-chequebook
 chmod +X /usr/bin/repair-chequebook
 ```
@@ -322,7 +322,7 @@ wget https://github.com/espoir1989/sana-install/releases/download/0.1.3-db-espoi
 
 #### 国内下载
 ```
-wget https://github.91chifun.workers.dev/https://github.com/espoir1989/sana-install/releases/download/0.1.3-db-espoir1989/ant
+wget https://github.com/espoir1989/sana-install/releases/download/0.1.3-db-espoir1989/ant
 ./ant db resetnonce --data-dir 数据目录
 ```
 
